@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet">
+    <!-- 스타일시트 연결 -->
+    <link rel="stylesheet" th:href="@{/css/todolist.css}">
+</head>
+<body>
+<h1>To-Do-List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>할 일</th>
+        <th>시간</th>
+        <th>수행 여부</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="todoentity : ${todoEntityList}">
+        <td th:text="${todoentity.id}"></td>
+        <td th:text="${todoentity.content}"></td>
+        <td th:text="${todoentity.createDate}"></td>
+        <td th:text="${todoentity.completed}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
